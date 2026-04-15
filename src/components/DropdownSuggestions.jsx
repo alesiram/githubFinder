@@ -4,7 +4,13 @@ const SuggestionDropdown = ({ suggestions, show, onSelect }) => {
   return (
     <ul className="suggestions">
       {suggestions.slice(0, 5).map((user) => (
-        <li key={user.login} onClick={() => onSelect(user.login)}>
+        <li
+          key={user.login}
+          onMouseDown={(e) => {
+            e.preventDefault();
+            onSelect(user.login);
+          }}
+        >
           <img
             src={user.avatar_url}
             alt={user.login}
@@ -16,5 +22,3 @@ const SuggestionDropdown = ({ suggestions, show, onSelect }) => {
     </ul>
   );
 };
-
-export default SuggestionDropdown;
