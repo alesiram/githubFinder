@@ -1,4 +1,4 @@
-export const SuggestionDropdown = ({ suggestions, show, onSelect }) => {
+const SuggestionDropdown = ({ suggestions, show, onSelect }) => {
   if (!show || suggestions.length === 0) return null;
 
   return (
@@ -22,3 +22,5 @@ export const SuggestionDropdown = ({ suggestions, show, onSelect }) => {
     </ul>
   );
 };
+
+export default SuggestionDropdown;
